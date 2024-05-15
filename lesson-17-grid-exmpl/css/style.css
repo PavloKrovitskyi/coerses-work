@@ -10,6 +10,7 @@
   flex-direction: column;
   font-family: sans-serif;
   color: #000;
+  /* вказано відступ від 50px до 20 */
   row-gap: calc(20px + (50 - 20) * ((100vw - 320px) / (1280 - 320)));
 }
 
@@ -27,17 +28,13 @@
 .header {
   padding: 20px;
   background-color: #196496;
-  h1 {
-    font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)));
-    text-align: center;
-    font-weight: 700;
-    color: #fff;
-  }
 }
-
-.styles {
-}
-.styles__container {
+.header h1 {
+  /* розмір шрифту на мобілках 30px на ПК 50 */
+  font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)));
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
 }
 .styles__content {
   background-color: #f0f0f0;
@@ -133,6 +130,7 @@
   background-color: rgb(40, 150, 26);
 }
 .footer h2 {
+  /* розмір шрифту на мобілках 30px на ПК 50 */
   font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)));
   text-align: center;
   font-weight: 700;
