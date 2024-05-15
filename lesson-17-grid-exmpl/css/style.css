@@ -42,7 +42,7 @@
 .styles__content {
   background-color: #f0f0f0;
   border-radius: 24px;
-  padding: 60px 34px 60px;
+  padding: 50px 24px 50px;
 }
 .styles__title {
   font-family: "Integral CF", sans-serif;
@@ -50,10 +50,11 @@
   font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1270 - 320)));
   font-weight: 700;
   text-align: center;
-  &:not(:last-child) {
-    margin-bottom: 45px;
-  }
 }
+.styles__title:not(:last-child) {
+  margin-bottom: 45px;
+}
+
 .styles__body {
   display: grid;
   grid-auto-rows: 1fr;
@@ -65,13 +66,14 @@
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 310/190;
-  }
 }
+.styles_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 310/190;
+}
+
 .styles__card-title {
   position: absolute;
   top: 0;
@@ -92,10 +94,8 @@
   .styles__body {
     grid-template-columns: repeat(2, 1fr);
   }
-  .styles__title {
-    &:not(:last-child) {
-      margin-bottom: 64px;
-    }
+  .styles__title:not(:last-child) {
+    margin-bottom: 64px;
   }
   .styles__card-title {
     padding: 25px 36px;
@@ -105,29 +105,26 @@
   .styles__body {
     grid-template-columns: minmax(280px, 407px) 1fr minmax(280px, 407px);
   }
-  .styles_item {
-    &:nth-child(4n + 1) {
-      img {
-        aspect-ratio: 407/289;
-      }
-    }
-    &:nth-child(4n + 2) {
-      grid-column: span 2;
-      img {
-        aspect-ratio: 684/289;
-      }
-    }
-    &:nth-child(4n + 3) {
-      grid-column: span 2;
-      img {
-        aspect-ratio: 684/289;
-      }
-    }
-    &:nth-child(4n + 4) {
-      img {
-        aspect-ratio: 407/289;
-      }
-    }
+  .styles_item:nth-child(4n + 1) img {
+    aspect-ratio: 407/289;
+  }
+
+  .styles_item:nth-child(4n + 2) {
+    grid-column: span 2;
+  }
+  .styles_item:nth-child(4n + 2) img {
+    aspect-ratio: 684/289;
+  }
+
+  .styles_item:nth-child(4n + 3) {
+    grid-column: span 2;
+  }
+  .styles_item:nth-child(4n + 3) img {
+    aspect-ratio: 684/289;
+  }
+
+  .styles_item:nth-child(4n + 4) img {
+    aspect-ratio: 407/289;
   }
 }
 
