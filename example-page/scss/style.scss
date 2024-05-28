@@ -5,6 +5,7 @@
 @import "_common.scss";
 
 :root {
+  // використання змінних для встановлення колірної теми
   --text-color: #fff;
   --bg-color: #000;
   --secondary-bg: #3b3939;
@@ -16,6 +17,7 @@
 @media (prefers-color-scheme: light) {
   /* простіше не змінювати окремі стилі а перезаписувати значення css змінних при зміні колірної схеми сторінки */
   :root {
+    // зміна значення змінних в залежності від колірної теми
     --text-color: #000;
     --bg-color: #fff;
     --secondary-bg: #d8d8d8;
@@ -55,7 +57,7 @@
   background-color: var(--secondary-bg);
   // .header__container
   &__container {
-    min-height: var(--header-height);
+    min-height: var(--header-height); /*встановлення висоти для шапки за допомогою змінної*/
     padding-block: toRem(5); /*5px*/
     width: 100%;
     display: flex;
@@ -107,9 +109,12 @@
 .menu {
   @media (max-width: toEm(767.98)) /*767.98/px*/ {
     background-color: var(--bg-color);
+
+    /*встановлення розміру падінгу згори за допомогою змінної*/
     padding: var(--header-height) toRem(15) toRem(15) toRem(15);
     font-size: toRem(22);
     overflow: auto;
+
     // .menu--position
     &--position {
       position: fixed;
@@ -128,7 +133,7 @@
       top: 0;
       right: -100%;
       width: 100%;
-      height: var(--header-height);
+      height: var(--header-height); /*встановлення висоти псевдоелементу меню за допомогою змінної*/
       background-color: var(--accent-bg);
       z-index: 2;
       transition: right 0.4s;
@@ -228,6 +233,7 @@
 //=====================================================================================================================================================
 
 .page {
+  /*встановлення розміру падінгу для main за допомогою змінної*/
   padding-top: var(--header-height);
 }
 .hero {
@@ -239,7 +245,7 @@
     align-items: center;
     justify-content: center;
     padding-block: toRem(40); /*40px*/
-    min-height: calc(100svh - var(--header-height));
+    min-height: calc(100svh - var(--header-height)); /*встановлення висоти блоку за допомогою змінної та calc*/
   }
   // .hero__title
   &__title {
