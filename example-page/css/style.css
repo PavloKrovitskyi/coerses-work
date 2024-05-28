@@ -67,6 +67,9 @@ button {
     --secondary-bg: #d8d8d8;
     --accent-bg: #89d2e4;
   }
+  :root .hero {
+    background: url("../img/hero-bg.avif") 57% 53%/110% no-repeat;
+  }
 }
 .wrapper {
   min-height: 100%;
@@ -96,7 +99,7 @@ button {
   background-color: var(--secondary-bg);
 }
 .header__container {
-  min-height: var(--header-height);
+  min-height: var(--header-height); /*встановлення висоти для шапки за допомогою змінної*/
   padding-block: 0.3125rem; /*5px*/
   width: 100%;
   display: flex;
@@ -112,11 +115,12 @@ button {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
+  will-change: transform;
 }
 @media (any-hover: hover) {
   .header__logo:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
 }
 .header__button {
@@ -146,6 +150,7 @@ button {
 @media (max-width: 47.99875em) {
   .menu {
     background-color: var(--bg-color);
+    /*встановлення розміру падінгу згори за допомогою змінної*/
     padding: var(--header-height) 0.9375rem 0.9375rem 0.9375rem;
     font-size: 1.375rem;
     overflow: auto;
@@ -167,7 +172,7 @@ button {
     top: 0;
     right: -100%;
     width: 100%;
-    height: var(--header-height);
+    height: var(--header-height); /*встановлення висоти псевдоелементу меню за допомогою змінної*/
     background-color: var(--accent-bg);
     z-index: 2;
     transition: right 0.4s;
@@ -267,9 +272,13 @@ button {
 }
 
 .page {
+  /*встановлення розміру падінгу для main за допомогою змінної*/
   padding-top: var(--header-height);
 }
 
+.hero {
+  background: url("../img/hero-bg-2.avif") center/cover no-repeat;
+}
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -277,7 +286,7 @@ button {
   align-items: center;
   justify-content: center;
   padding-block: 2.5rem; /*40px*/
-  min-height: calc(100svh - var(--header-height));
+  min-height: calc(100svh - var(--header-height)); /*встановлення висоти блоку за допомогою змінної та calc*/
 }
 .hero__title {
   /* калькулятор для clamp який переводить значення в реми https://min-max-calculator.9elements.com/ */
