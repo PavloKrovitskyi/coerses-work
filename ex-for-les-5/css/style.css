@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,700&display=swap");
+@import "reset.css";
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+main {
+  flex-grow: 1;
+}
+
+/* стилі для шапки */
+.header {
+  text-align: center;
+  padding: 30px 0;
+  background-color: rgb(149, 192, 241);
+  margin-bottom: 80px;
+}
+
+/* стилі для заголовку шапки */
+.header h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+.main {
+  margin-bottom: 80px;
+}
+
+/* вказуємо падінги для блоку з картками */
+.cards {
+  padding: 100px 0;
+  background-color: #cac8c8;
+}
+
+/* стилі для центрування та обмеження по ширині */
+.cards-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* стилі для заголовку */
+.cards-title {
+  font-family: "Roboto";
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 60px; /* відступ від заголовку до карток */
+}
+
+/* стилі для обгортки (списку) в якій картки */
+.cards-items {
+  margin: 0 -12px;
+  font-size: 0;
+}
+
+/* стилі для карток */
+.cards-item {
+  padding: 0 12px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* встановлюєм обмеження по ширині для посилання в якому картинка */
+.cards-link {
+  max-width: 200px;
+  display: inline-block;
+}
+
+/* встановлюємо розмір для картинки щоб при зміні картинки на більшу вона не виходила за батьківський блок */
+.cards-link img {
+  max-width: 100%;
+}
+
+/* стилі для підвалу */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: rgb(207, 171, 243);
+}
+
+.footer h2 {
+  font-weight: 700;
+  font-size: 35px;
+}
+.footer h2 span {
+  color: rgb(33, 108, 206);
+}
