@@ -1,0 +1,91 @@
+@use "sass:math";
+
+@import "_mixins.scss";
+@import "_reset.scss";
+@import "_common.scss";
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1270;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поїнти
+$pc: toEm($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
+$tablet: toEm(991.98); // Планшети, деякі телефони в горизонтальному положенні
+$mobile: toEm(767.98); // Телефони L
+$mobileSmall: toEm(479.98); // Телефони S
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+main {
+  flex-grow: 1;
+}
+
+[class*="__container"] {
+  max-width: toRem(1270);
+  margin: 0 auto;
+  padding: 0 toRem(15);
+}
+
+.header {
+  padding: toRem(30) 0;
+  background-color: rgb(77, 77, 77);
+  // .header__container
+  &__container {
+    h1 {
+      text-align: center;
+      font-size: toRem(30);
+    }
+  }
+}
+.page {
+  padding: toRem(30) 0;
+  // .page__container
+  &__container {
+    text-align: center;
+    h2 {
+      font-size: toRem(45);
+      margin-bottom: toEm(100, 45);
+      @include adaptiveValue("font-size", 45, 20);
+    }
+    p {
+      line-height: 1.3;
+      font-size: toRem(20);
+      margin-bottom: toRem(50);
+    }
+  }
+  // .page__button
+  &__button {
+    display: inline-block;
+    padding: toRem(20) toRem(50);
+    background-color: rgb(50, 134, 134);
+    font-weight: 700;
+    font-size: toRem(20);
+    border-radius: 10px;
+  }
+}
+.footer {
+  padding: toRem(30) 0;
+  background-color: rgb(77, 77, 77);
+  // .footer__container
+  &__container {
+    text-align: center;
+    font-size: toRem(30);
+  }
+}
