@@ -11,7 +11,7 @@
   font-family: sans-serif;
   color: #000;
   /* вказано відступ від 50px до 20 */
-  row-gap: calc(20px + (50 - 20) * ((100vw - 320px) / (1280 - 320)));
+  row-gap: min(max(20px, calc(20px + (50 - 20) * ((100vw - 320px) / (1270 - 320)))), 50px);
 }
 
 .page {
@@ -31,7 +31,7 @@
 }
 .header h1 {
   /* розмір шрифту на мобілках 30px на ПК 50 */
-  font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)));
+  font-size: min(max(30px, calc(30px + (50 - 30) * ((100vw - 320px) / (1270 - 320)))), 50px);
   text-align: center;
   font-weight: 700;
   color: #fff;
@@ -44,7 +44,7 @@
 .styles__title {
   font-family: "Integral CF", sans-serif;
   /* розмір на мобілках 32px на ПК 48 */
-  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1270 - 320)));
+  font-size: min(max(32px, calc(32px + (48 - 32) * ((100vw - 320px) / (1270 - 320)))), 48px);
   font-weight: 700;
   text-align: center;
 }
@@ -80,6 +80,7 @@
   font-weight: 700;
   /* розмір на мобілках 24px на ПК 36 */
   font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1270 - 320)));
+  font-size: min(max(24px, calc(24px + (36 - 24) * ((100vw - 320px) / (1270 - 320)))), 36px);
   padding: 16px 24px;
 }
 
@@ -131,7 +132,7 @@
 }
 .footer h2 {
   /* розмір шрифту на мобілках 30px на ПК 50 */
-  font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)));
+  font-size: min(max(30px, calc(30px + (50 - 30) * ((100vw - 320px) / (1280 - 320)))), 50px);
   text-align: center;
   font-weight: 700;
   color: #fff;
